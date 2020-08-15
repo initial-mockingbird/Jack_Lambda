@@ -1,0 +1,176 @@
+Starting:
+  stack ghci --with-ghc ghci --docker-run-args=--interactive=true --no-build --no-load Proyecto1
+GHCi, version 8.8.3: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/daniel/.ghci
+Loaded GHCi configuration from /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/.stack-work/intero/intero-scriptzmSZuY
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+
+/home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:122:11: error:
+    • Couldn't match expected type ‘Mano’ with actual type ‘[Carta]’
+    • In the expression: [(toEnum $ fromEnum minBound :: Carta) .. ]
+      In an equation for ‘baraja’:
+          baraja = [(toEnum $ fromEnum minBound :: Carta) .. ]
+    |
+122 | baraja =  [(toEnum $ fromEnum minBound::Carta) .. ]
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+
+/home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:122:11: error:
+    • Couldn't match expected type ‘Mano’ with actual type ‘[Carta]’
+    • In the expression: [minBound :: Carta .. ]
+      In an equation for ‘baraja’: baraja = [minBound :: Carta .. ]
+    |
+122 | baraja =  [minBound::Carta .. ]
+    |           ^^^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+
+/home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:122:11: error:
+    • Couldn't match expected type ‘Mano’ with actual type ‘[Carta]’
+    • In the expression: [(minBound :: Carta) .. ]
+      In an equation for ‘baraja’: baraja = [(minBound :: Carta) .. ]
+    |
+122 | baraja =  [(minBound::Carta) .. ]
+    |           ^^^^^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+Ok, one module loaded.
+
+ minBound::Carta
+੩A
+ [minBound::Carta]
+[੩A]
+ [minBound::Carta .. ]
+[*** Exception: toEnum{Palo}: tag (10) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ take 5 [minBound::Carta .. ]
+[*** Exception: toEnum{Palo}: tag (10) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ take 1 [minBound::Carta .. ]
+[*** Exception: toEnum{Palo}: tag (10) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ toEnum 10
+*** Exception: Prelude.Enum.().toEnum: bad argument
+ toEnum 10::Carta
+੤10
+ [1..52]
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]
+ fmap (toEnum::Carta )[1..52]
+
+<interactive>:98:7: error:
+    • Couldn't match expected type ‘Carta’ with actual type ‘Int -> a0’
+    • Probable cause: ‘toEnum’ is applied to too few arguments
+      In the first argument of ‘fmap’, namely ‘(toEnum :: Carta)’
+      In the expression: fmap (toEnum :: Carta) [1 .. 52]
+      In an equation for ‘it’: it = fmap (toEnum :: Carta) [1 .. 52]
+
+<interactive>:98:7: error:
+    • Couldn't match expected type ‘Integer -> b’
+                  with actual type ‘Carta’
+    • In the first argument of ‘fmap’, namely ‘(toEnum :: Carta)’
+      In the expression: fmap (toEnum :: Carta) [1 .. 52]
+      In an equation for ‘it’: it = fmap (toEnum :: Carta) [1 .. 52]
+    • Relevant bindings include it :: [b] (bound at <interactive>:98:1)
+ fmap (toEnum )[1..52]
+[*** Exception: Prelude.Enum.().toEnum: bad argument
+ fmap (toEnum)[1::Carta..52::Carta]
+[(minBound::Carta) .. ]
+<interactive>:120:18: error:
+    Operator applied to too few arguments: Carta..
+ fmap (toEnum)[(1::Carta)..(52::Carta)]
+
+<interactive>:123:16: error:
+    • Couldn't match expected type ‘Int’ with actual type ‘Carta’
+    • In the expression: (1 :: Carta)
+      In the second argument of ‘fmap’, namely
+        ‘[(1 :: Carta) .. (52 :: Carta)]’
+      In the expression: fmap (toEnum) [(1 :: Carta) .. (52 :: Carta)]
+
+<interactive>:123:28: error:
+    • Couldn't match expected type ‘Int’ with actual type ‘Carta’
+    • In the expression: (52 :: Carta)
+      In the second argument of ‘fmap’, namely
+        ‘[(1 :: Carta) .. (52 :: Carta)]’
+      In the expression: fmap (toEnum) [(1 :: Carta) .. (52 :: Carta)]
+ fmap toEnum [1..52]
+[*** Exception: Prelude.Enum.().toEnum: bad argument
+ fmap toEnum::Carta [1..52]
+
+<interactive>:148:22: error: parse error on input ‘..’
+ fmap toEnum::Carta [1 .. 52]
+
+<interactive>:151:23: error: parse error on input ‘..’
+ fmap toEnum::Carta $ [1 .. 52]
+
+<interactive>:154:25: error: parse error on input ‘..’
+ fmap (toEnum::Carta) $ [1 .. 52]
+
+<interactive>:156:7: error:
+    • Couldn't match expected type ‘Carta’ with actual type ‘Int -> a0’
+    • Probable cause: ‘toEnum’ is applied to too few arguments
+      In the first argument of ‘fmap’, namely ‘(toEnum :: Carta)’
+      In the expression: fmap (toEnum :: Carta)
+      In the expression: fmap (toEnum :: Carta) $ [1 .. 52]
+
+<interactive>:156:7: error:
+    • Couldn't match expected type ‘Integer -> b’
+                  with actual type ‘Carta’
+    • In the first argument of ‘fmap’, namely ‘(toEnum :: Carta)’
+      In the expression: fmap (toEnum :: Carta)
+      In the expression: fmap (toEnum :: Carta) $ [1 .. 52]
+    • Relevant bindings include
+        it :: [b] (bound at <interactive>:156:1)
+ fmap (toEnum::Integer->Carta) $ [1 .. 52]
+
+<interactive>:166:7: error:
+    • Couldn't match type ‘Integer’ with ‘Int’
+      Expected type: Integer -> Carta
+        Actual type: Int -> Carta
+    • In the first argument of ‘fmap’, namely
+        ‘(toEnum :: Integer -> Carta)’
+      In the expression: fmap (toEnum :: Integer -> Carta)
+      In the expression: fmap (toEnum :: Integer -> Carta) $ [1 .. 52]
+ fmap (toEnum::Int->Carta) $ [1 .. 52]
+[੧A,੧2,੧3,੪4,੪5,੪6,੪7,੤8,੤9,੤10,੤J,੩Q,੩K,੩A,੩2,*** Exception: toEnum{Palo}: tag (4) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+Ok, one module loaded.
+
+ fmap (toEnum::Int->Carta) $ [1 .. 52]
+[*** Exception: toEnum{Palo}: tag (-1) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+Ok, one module loaded.
+
+ fmap (toEnum::Int->Carta) $ [1 .. 52]
+[੧A,੧2,੧3,੪4,੪5,੪6,੪7,੤8,੤9,੤10,੤J,੩Q,੩K,੩A,੩2,*** Exception: toEnum{Palo}: tag (4) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+Ok, one module loaded.
+
+ fmap (toEnum::Int->Carta) $ [1 .. 52]
+[੧A,੧2,੧3,੧4,੧5,੧6,੧7,੧8,੧9,੧10,੧J,੧Q,੪K,੪A,੪2,੪3,੪4,੪5,੪6,੪7,੪8,੪9,੪10,੪J,੪Q,੤K,੤A,੤2,੤3,੤4,੤5,੤6,੤7,੤8,੤9,੤10,੤J,੤Q,੩K,੩A,੩2,੩3,੩4,੩5,੩6,੩7,੩8,੩9,੩10,੩J,੩Q,*** Exception: toEnum{Palo}: tag (4) is outside of enumeration's range (0,3)
+CallStack (from HasCallStack):
+  error, called at /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs:14:66 in main:DataTypes
+ 
+[1 of 1] Compiling DataTypes        ( /home/daniel/Documents/Haskell_Aux/Lenguajes1/Proyecto1/src/DataTypes.hs, interpreted )
+Ok, one module loaded.
+
+ 

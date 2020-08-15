@@ -1,0 +1,4 @@
+:set prompt ""
+:set -fbyte-code
+:set -fdiagnostics-color=never
+:set prompt "\4 "
